@@ -1,0 +1,17 @@
+git checkout main
+git fetch origin
+git pull origin main
+
+
+#check other developers' changes
+git fetch origin
+git status
+git pull origin main
+
+#host on other devices within same network range
+npm run dev -- --host
+
+npm view tailwindcss version
+
+#flowbite, tailwindcss suulgah
+https://flowbite.com/docs/getting-started/react/
