@@ -4,9 +4,7 @@ export default function Home() {
   return (
 <>
     <div id="default-carousel" className="relative w-full" data-carousel="slide">
-      {/* Carousel wrapper */}
       <div className="relative h-56 overflow-hidden rounded-lg md:h-96">
-        {/* Item 1 */}
         <div className=" duration-700 ease-in-out" data-carousel-item>
           <img
             src="/src/assets/sky.jpg"
@@ -14,7 +12,6 @@ export default function Home() {
             alt="..."
           />
         </div>
-        {/* Item 2 */}
         <div className="hidden duration-700 ease-in-out" data-carousel-item>
           <img
             src="/src/assets/ball.jpg"
@@ -22,7 +19,6 @@ export default function Home() {
             alt="..."
           />
         </div>
-        {/* Item 3 */}
         <div className="hidden duration-700 ease-in-out" data-carousel-item>
           <img
             src="/src/assets/seattle.jpg"
@@ -30,7 +26,6 @@ export default function Home() {
             alt="..."
           />
         </div>
-        {/* Item 4 */}
         <div className="hidden duration-700 ease-in-out" data-carousel-item>
           <img
             src="/src/assets/chicago.jpg"
@@ -39,7 +34,7 @@ export default function Home() {
           />
         </div>
       </div>
-      {/* Slider indicators */}
+
       <div className="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
         <button
           type="button"
@@ -77,7 +72,6 @@ export default function Home() {
           data-carousel-slide-to="4"
         ></button>
       </div>
-      {/* Slider controls */}
       <button
         type="button"
         className="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
@@ -128,7 +122,9 @@ export default function Home() {
       </button>
     </div>
 
-    <h2 className="text-2xl font-bold">МАНАЙ ДЭЛГЭЦНЭЭ</h2>
+    <div className="flex justify-center items-center h-full">
+      <h2 className="text-2xl font-bold">МАНАЙ ДЭЛГЭЦНЭЭ</h2>
+    </div>
     <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
         <div>
             <img className="h-auto max-w-full rounded-lg" src="/src/assets/seattle.jpg" alt="" />
@@ -150,7 +146,9 @@ export default function Home() {
         </div>
     </div>
 
-    <h2 className="text-2xl font-bold">ТУН УДАХГҮЙ</h2>
+    <div className="flex justify-center items-center h-full">
+      <h2 className="text-2xl font-bold">ТУН УДАХГҮЙ</h2>
+    </div>
     <div className="grid md:grid-cols-4 gap-2">
         <div>
             <img className="h-auto max-w-full rounded-lg" src="/src/assets/seattle.jpg" alt="" />
@@ -164,7 +162,6 @@ export default function Home() {
         <div>
             <img className="h-auto max-w-full rounded-lg" src="/src/assets/seattle.jpg" alt="" />
         </div>
-        
     </div>
 
     

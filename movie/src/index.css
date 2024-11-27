@@ -13,6 +13,7 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+
 a {
   font-weight: 500;
   color: #646cff;
@@ -24,6 +25,7 @@ a:hover {
 
 body {
   margin: 0;
+  padding: 0;
   display: flex;
   place-items: center;
   min-width: 320px;
@@ -60,7 +62,7 @@ button:focus-visible {
     background-color: #ffffff;
   }
   a:hover {
-    color: #747bff;
+    color: #464bb5;
   }
   button {
     background-color: #f9f9f9;
@@ -70,3 +72,7 @@ button:focus-visible {
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+* {
+  margin: 0;
+  padding: 0;
+}
