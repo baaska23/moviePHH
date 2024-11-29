@@ -1,7 +1,9 @@
 import React from "react";
 import background from "../assets/movie/dunkirk.jpg";
+import { useNavigate } from "react-router-dom";
 
 export default function Movie() {
+    const navigate = useNavigate();
     return (
         <>
             <div className="relative w-full h-96 bg-cover bg-center flex flex-col justify-center items-start text-white p-8" style={{ backgroundImage: `url(${background})` }}>
@@ -17,7 +19,9 @@ export default function Movie() {
                         <p>Дэлхийн 2-р дайны эхэн үе. Британи, Канад, Франц Белги зэрэг холбоот орнуудын олон тооны цэрэг 
                         арми Германий армид бүслэгдэв. Дөнкирк боомтоос английн арал руу нүүлгэн шилжүүлжээ.</p>
                     </div>
-                    <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">ЗАХИАЛАХ</button>
+                    <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" 
+                            onClick={()=> navigate('/bookTicket')}>ЗАХИАЛАХ
+                    </button>
                 </div>
             </div>
 
