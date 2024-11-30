@@ -1,6 +1,6 @@
 import React from "react";
 
-const MovieCard = ({ title, poster, description, timings }) => {
+const MovieCard = ({ title, poster, description, timings, onTimingClick }) => {
   return (
     <div className="bg-gray-800 text-white rounded-lg shadow-md p-4 mb-6 flex items-start space-x-4">
       {/* Movie Poster */}
@@ -20,6 +20,7 @@ const MovieCard = ({ title, poster, description, timings }) => {
           {timings.map((time, index) => (
             <button
               key={index}
+              onClick={() => onTimingClick(title, time)} // Pass title and timing to the handler
               className="bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium px-3 py-1 rounded"
             >
               {time}

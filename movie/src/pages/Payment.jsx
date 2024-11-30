@@ -1,8 +1,11 @@
 import React, { useState } from "react";
+import { useLocation } from "react-router-dom";
 
-export default function Payment({ adultTickets, childTickets }) {
+export default function Payment() {
   const adultTicketPrice = 10000;
   const childTicketPrice = 8000;
+  const location = useLocation();
+  const { selectedSeats, adultTickets, childTickets } = location.state || {};
 
   const totalCost = adultTickets * adultTicketPrice + childTickets * childTicketPrice;
 
@@ -31,6 +34,7 @@ export default function Payment({ adultTickets, childTickets }) {
     }
     alert("Payment successful!");
   };
+
 
   return (
     <div className="bg-black min-h-screen text-white">
