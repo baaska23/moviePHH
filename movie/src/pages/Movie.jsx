@@ -6,7 +6,7 @@ export default function Movie() {
     const navigate = useNavigate();
     return (
         <>
-            <div className="relative w-full h-96 bg-cover bg-center flex flex-col justify-center items-start text-white p-8" style={{ backgroundImage: `url(${background})` }}>
+            <div className="relative w-full h-100 bg-cover  flex flex-col justify-center items-start text-white p-8" style={{ backgroundImage: `url(${background})` }}>
                 <div className="bg-black bg-opacity-50 p-6 rounded-lg">
                     <h1 className="text-5xl font-bold mb-4">Dunkirk</h1>
                     <div className="flex flex-wrap justify-start mb-4 space-x-2">
