@@ -3,8 +3,8 @@ import React from "react";
 export default function ComingSoon() {
     return (
         <>
-            <h2 className="text-2xl font-bold text-center mb-8">ТУН УДАХГҮЙ</h2>
-            <div className="grid md:grid-cols-4 gap-16">
+            <h2 className="text-2xl font-bold text-center my-6">ТУН УДАХГҮЙ</h2>
+            <div className="grid md:grid-cols-4 gap-16 px-32 my-8">
                 <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                     <a href="#">
                         <img className="rounded-t-lg" src="/src/assets/seattle.jpg" alt="Seattle" />

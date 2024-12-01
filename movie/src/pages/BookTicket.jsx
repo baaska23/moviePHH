@@ -40,7 +40,7 @@ export default function BookTicket() {
     <div>
       <h1 className="text-2xl font-bold text-center my-6">Book a Ticket</h1>
 
-      <div>
+      <div className="px-32">
         {movies.map((movie, index) => (
           <MovieCard
             key={index}
