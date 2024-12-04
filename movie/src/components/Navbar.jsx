@@ -1,9 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Login from "./Login";
+import Signup from "./Signup";
 
 
 export function Navbar() {
   const navigate = useNavigate();
+  const [isLoginOpen, setIsLoginOpen] = useState(false);
+  const [isSignupOpen, setIsSignupOpen] = useState(false);
+  const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
 
     return (
         <div>
@@ -13,7 +19,7 @@ export function Navbar() {
       <img src="src/assets/theatreIcon.svg" className="h-8" alt="logo" />
       <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">iCinema</span>
     </a>
-    <div className="flex md:order-2">
+    <div className="flex md:order-2 gap-2">
       <button type="button" data-collapse-toggle="navbar-search" aria-controls="navbar-search" aria-expanded="false" className="md:hidden text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 me-1">
         <svg className="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
           <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
@@ -35,6 +41,60 @@ export function Navbar() {
           <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 1h15M1 7h15M1 13h15"/>
         </svg>
       </button>
+      
+        {/* Right Section */}
+        <div className="flex md:order-2 gap-2">
+            {isUserLoggedIn ? (
+              <div className="relative">
+                {/* User Icon */}
+                <button
+                  onClick={() => setDropdownOpen(!dropdownOpen)}
+                  className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-200 dark:bg-gray-700"
+                >
+                  <img
+                    src="src/assets/man.png"
+                    alt="User Icon"
+                    className="h-8 w-8 rounded-full"
+                  />
+                </button>
+
+                {/* Dropdown Menu */}
+                {dropdownOpen && (
+                  <div className="absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 z-20">
+                    <ul className="py-2 text-sm text-gray-700 dark:text-gray-200">
+                      <li>
+                        <a
+                          href="/profile"
+                          className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600"
+                        >
+                          Profile
+                        </a>
+                      </li>
+                      <li>
+                        <button
+                          onClick={() => {
+                            setIsUserLoggedIn(false);
+                            setDropdownOpen(false);
+                          }}
+                          className="block w-full text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600"
+                        >
+                          Logout
+                        </button>
+                      </li>
+                    </ul>
+                  </div>
+                )}
+              </div>
+            ) : (
+              <button
+                onClick={() => setIsLoginOpen(true)}
+                className="me-2 px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-800"
+              >
+                Нэвтрэх
+              </button>
+            )}
+          </div>
+
     </div>
     <div className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-search">
       <div className="relative mt-3 md:hidden">
@@ -59,6 +119,26 @@ export function Navbar() {
     </div>
   </div>
 </nav>
+ {/* Login Modal */}
+ {isLoginOpen && (
+        <Login
+          onClose={() => setIsLoginOpen(false)}
+          onLoginSuccess={() => {
+            setIsUserLoggedIn(true);
+            setIsLoginOpen(false);
+          }}
+        />
+      )}
+
+{isSignupOpen && (
+        <Signup
+          onClose={() => setIsSignupOpen(false)}
+          onSignupSuccess={() => {
+            setIsSignupOpen(false);
+            setIsLoginOpen(true);
+          }}
+        />
+      )}
         </div>
     )
 }
