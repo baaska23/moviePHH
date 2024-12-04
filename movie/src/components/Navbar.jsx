@@ -127,15 +127,22 @@ export function Navbar() {
             setIsUserLoggedIn(true);
             setIsLoginOpen(false);
           }}
+          onSignupOpen={() => {
+            setIsSignupOpen(true);
+            setIsLoginOpen(false);
+          }}
         />
       )}
 
-{isSignupOpen && (
+      {/* Signup Modal */}
+      {isSignupOpen && (
         <Signup
           onClose={() => setIsSignupOpen(false)}
-          onSignupSuccess={() => {
-            setIsSignupOpen(false);
+          onSignupSuccess={() => 
+            setIsSignupOpen(false)}
+          onLoginOpen={() => {
             setIsLoginOpen(true);
+            setIsSignupOpen(false);
           }}
         />
       )}
