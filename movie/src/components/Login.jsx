@@ -15,7 +15,7 @@ export default function Login({ onClose, onLoginSuccess }) {
 
     if (email === mockResponse.email && password === mockResponse.password) {
       setMessage("Амжилттай нэвтэрлээ!");
-      onLoginSuccess(); // Trigger login success
+      onLoginSuccess();
     } else {
       setMessage("Нэвтрэх мэдээлэл буруу байна.");
     }

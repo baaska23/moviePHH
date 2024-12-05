@@ -1,11 +1,15 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import axios from "axios";
 
 export default function Payment() {
   const adultTicketPrice = 10000;
   const childTicketPrice = 8000;
+
   const location = useLocation();
-  const { selectedSeats, adultTickets, childTickets } = location.state || {};
+  console.log("Location state:", location.state);
+
+  const { selectedSeats, adultTickets = 0, childTickets = 0 } = location.state || {};
 
   const totalCost = adultTickets * adultTicketPrice + childTickets * childTicketPrice;
 
@@ -26,22 +30,39 @@ export default function Payment() {
     setPaymentMethod(method);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
     if (!formData.name || !formData.email || !formData.phone || !paymentMethod) {
       alert("Please complete all fields before proceeding.");
       return;
     }
-    alert("Payment successful!");
-  };
 
+    console.log("Submitting data:", {
+      ...formData,
+      paymentMethod,
+      totalCost,
+    });
+
+    try {
+      const response = await axios.post("http://localhost:3001/api/payment", {
+        ...formData,
+        paymentMethod,
+        totalCost,
+      });
+      console.log("Payment successful:", response.data); // Log server response
+      alert("Payment successful!");
+    } catch (error) {
+      console.error("Error processing payment:", error.response || error.message); // Log error details
+      alert("Payment failed! Please try again.");
+    }
+  };
 
   return (
     <div className="bg-black min-h-screen text-white">
-      {/* Payment Summary */}
       <div className="container mx-auto py-6">
         <h1 className="text-2xl font-bold mb-4">Төлбөрийн мэдээлэл</h1>
-        <div className="bg-gray-900 p-4 rounded-lg">
+        <div className="bg-gray-900 p-4 rounded-lg mb-6">
           <p className="mb-2">
             <strong>Том хүн:</strong> {adultTickets} тасалбар x {adultTicketPrice}₮
           </p>
@@ -54,115 +75,63 @@ export default function Payment() {
         </div>
       </div>
 
-      {/* Payer Info Form */}
-      <div className="container mx-auto py-6">
-        <h2 className="text-xl font-semibold mb-4">Хувийн мэдээлэл</h2>
-        <form className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-          <div>
-            <label htmlFor="name" className="block mb-2">
-              Нэр:
-            </label>
+      <form onSubmit={handleSubmit} className="bg-gray-900 p-6 rounded-lg max-w-xl mx-auto">
+        <div className="mb-4">
+          <label className="block mb-2">
+            Name:
             <input
               type="text"
-              id="name"
               name="name"
               value={formData.name}
               onChange={handleInputChange}
-              className="w-full p-2 rounded-lg bg-gray-800 text-white border border-gray-700"
-              placeholder="Таны нэр"
-              required
+              className="w-full p-2 rounded bg-gray-800 text-white"
             />
-          </div>
-          <div>
-            <label htmlFor="email" className="block mb-2">
-              И-мэйл:
-            </label>
+          </label>
+        </div>
+        <div className="mb-4">
+          <label className="block mb-2">
+            Email:
             <input
               type="email"
-              id="email"
               name="email"
               value={formData.email}
               onChange={handleInputChange}
-              className="w-full p-2 rounded-lg bg-gray-800 text-white border border-gray-700"
-              placeholder="example@mail.com"
-              required
+              className="w-full p-2 rounded bg-gray-800 text-white"
             />
-          </div>
-          <div>
-            <label htmlFor="phone" className="block mb-2">
-              Утасны дугаар:
-            </label>
+          </label>
+        </div>
+        <div className="mb-4">
+          <label className="block mb-2">
+            Phone:
             <input
               type="text"
-              id="phone"
               name="phone"
               value={formData.phone}
               onChange={handleInputChange}
-              className="w-full p-2 rounded-lg bg-gray-800 text-white border border-gray-700"
-              placeholder="99000000"
-              required
+              className="w-full p-2 rounded bg-gray-800 text-white"
             />
-          </div>
-        </form>
-      </div>
-
-      {/* Payment Method */}
-      <div className="container mx-auto py-6">
-        <h2 className="text-xl font-semibold mb-4">Төлбөрийн арга</h2>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          <button
-            onClick={() => handlePaymentMethodChange("Khan Bank")}
-            className={`p-4 rounded-lg text-center ${
-              paymentMethod === "Khan Bank"
-                ? "bg-blue-600"
-                : "bg-gray-800 hover:bg-gray-700"
-            }`}
-          >
-            Khan Bank
-          </button>
-          <button
-            onClick={() => handlePaymentMethodChange("Golomt Bank")}
-            className={`p-4 rounded-lg text-center ${
-              paymentMethod === "Golomt Bank"
-                ? "bg-blue-600"
-                : "bg-gray-800 hover:bg-gray-700"
-            }`}
-          >
-            Golomt Bank
-          </button>
-          <button
-            onClick={() => handlePaymentMethodChange("TDB")}
-            className={`p-4 rounded-lg text-center ${
-              paymentMethod === "TDB"
-                ? "bg-blue-600"
-                : "bg-gray-800 hover:bg-gray-700"
-            }`}
-          >
-            TDB
-          </button>
-          <button
-            onClick={() => handlePaymentMethodChange("Xac Bank")}
-            className={`p-4 rounded-lg text-center ${
-              paymentMethod === "Xac Bank"
-                ? "bg-blue-600"
-                : "bg-gray-800 hover:bg-gray-700"
-            }`}
-          >
-            Xac Bank
-          </button>
-          
+          </label>
         </div>
-      </div>
-
-      {/* Confirm Button */}
-      <div className="container mx-auto text-center mt-8">
-        <button
-          onClick={handleSubmit}
-          className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-lg"
-        >
-          Баталгаажуулах
+        <div className="mb-4">
+          <label className="block mb-2">
+            Payment Method:
+            <select
+              value={paymentMethod}
+              onChange={(e) => handlePaymentMethodChange(e.target.value)}
+              className="w-full p-2 rounded bg-gray-800 text-white"
+            >
+              <option value="">Select a payment method</option>
+              <option value="Khan Bank">Khan Bank</option>
+              <option value="Golomt Bank">Golomt Bank</option>
+              <option value="TDB">TDB</option>
+              <option value="M Bank">M Bank</option>
+            </select>
+          </label>
+        </div>
+        <button type="submit" className="bg-blue-500 w-full p-2 rounded mt-4">
+          Submit
         </button>
-      </div>
+      </form>
     </div>
   );
 }

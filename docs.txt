@@ -15,3 +15,13 @@ npm view tailwindcss version
 
 #flowbite, tailwindcss suulgah
 https://flowbite.com/docs/getting-started/react/
+
+#tailwindcss documentation
+https://tailwindcss.com/docs/installation
+
+#git push
+git add .
+git commit -m "message"
+git push origin main
+git checkout main
+git pull origin main
