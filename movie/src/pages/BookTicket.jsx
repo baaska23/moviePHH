@@ -1,36 +1,32 @@
-import React from "react";
-import MovieCard from "../components/MovieCard";
-import { useNavigate } from "react-router-dom";
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+import MovieCard from '../components/MovieCard';
 
 export default function BookTicket() {
   const navigate = useNavigate();
+  const [movies, setMovies] = useState([]);
 
-  const movies = [
-    {
-      title: "Oppenheimer",
-      poster: "/src/assets/movie/dunkirk.jpg",
-      description: "Directed by Christopher Nolan, a historical biography.",
-      timings: ["11:50", "13:40"],
-    },
-    {
-      title: "Batman",
-      poster: "/src/assets/movie/dunkirk.jpg",
-      description: "Directed by Matt Reeves, action-packed adventure.",
-      timings: ["16:40", "19:45", "22:10"],
-    },
-    {
-      title: "Napoleon",
-      poster: "/src/assets/movie/dunkirk.jpg",
-      description: "A biography of the iconic French leader.",
-      timings: ["12:00"],
-    },
-  ];
+  useEffect(() => {
+    const fetchMovies = async () => {
+      try {
+        const response = await axios.get('http://localhost:3001/movies');
+        console.log(response.data); 
+        setMovies(response.data);
+      } catch (error) {
+        console.error('Error fetching movies:', error);
+      }
+    };
 
-  // Handle timing click
-  const handleTimingClick = (movieTitle, timing) => {
-    navigate("/selectSeat", {
+    fetchMovies();
+  }, []);
+
+  const handleTimingClick = (movieTitle, timing, moviePoster) => {
+    console.log(moviePoster)
+    navigate('/selectSeat', {
       state: {
         movieTitle,
+        moviePoster, // Ensure moviePoster is passed
         timing,
       },
     });
@@ -39,7 +35,6 @@ export default function BookTicket() {
   return (
     <div>
       <h1 className="text-2xl font-bold text-center my-6">Book a Ticket</h1>
-
       <div className="px-32">
         {movies.map((movie, index) => (
           <MovieCard

@@ -43,6 +43,16 @@ app.post('/api/payment', async (req, res) => {
   }
 });
 
+app.get('/movies', async (req, res) => {
+  try{
+    const result = await pool.query('SELECT * FROM movies');
+    res.json(result.rows);
+  } catch(err){
+    console.error(err)
+    res.status(500).send('Server error')
+  }
+});
+
 app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`);
 });
