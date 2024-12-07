@@ -7,12 +7,12 @@ export default function Footer() {
   return (
     <footer className="bg-white dark:bg-gray-900">
       {/* Divider */}
-      <hr className="mb-3 border-gray-300 dark:border-gray-200" />
+      <hr className=" border-gray-300 dark:border-gray-200" />
 
       {/* Main container */}
       <div className="mx-auto w-full max-w-screen-xl px-4">
         {/* Social icons section */}
-        <div className="flex flex-wrap justify-center py-10 space-x-5 rtl:space-x-reverse">
+        <div className="flex flex-wrap justify-center pt-10 space-x-5 rtl:space-x-reverse">
             <a href="#" className="text-gray-400 hover:text-gray-900 dark:hover:text-white">
               <svg className="w-6 h-6 sm:w-4 sm:h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 8 19">
                 <path
@@ -107,14 +107,14 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Image column */}
-          <div className="flex justify-center items-center">
-            <img
-              className="w-32 h-32 md:w-24 md:h-24"
-              src="src/assets/login-pic.png"
-              alt="Camera Icon"
-            />
-          </div>
+          {/* Image column */}  
+          <div className="flex justify-center items-center h-32 w-48">
+  <img
+    className="md:w-32 md:h-32"
+    src="src/assets/movieIcon.png"
+    alt="Camera Icon"
+  />
+</div>
         </div>
 
         {/* Footer bottom */}
