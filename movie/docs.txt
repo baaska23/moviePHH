@@ -25,3 +25,11 @@ git commit -m "message"
 git push origin main
 git checkout main
 git pull origin main
+
+#sql connect hiih
+psql -U postgre -h localhost -d postgres
+
+#data loading shalgah
+curl http://localhost:3001/coming_soon_movies
+curl http://localhost:3001/movies
+curl http://localhost:3001/payments
