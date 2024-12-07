@@ -131,103 +131,193 @@ export default function Home() {
     <hr className="mb-3 border-gray-300 dark:border-gray-200 mx-20" />
 
     <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mx-20">
-        <div className=" bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-500">
-            <img className="h-auto max-w-full rounded-lg" src="/src/assets/seattle.jpg" alt="" />
-            <div className="p-3">
-              <div className="flex items-center space-x-4 gap-48">
-                 <p className="font-normal text-gray-700 dark:text-gray-400">sep 26, 2023</p>
-                   <a href="#" className="font-normal text-blue-700 dark:text-blue-400 hover:underline" onClick={() => navigate('/movie')}>
-                  дэлгэрэнгүй
-                 </a>
-              </div>
-                <a href="#">
-                            <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Bob Marley</h5>
-                </a>
-                <p className="font-normal text-gray-700 dark:text-gray-400"> Төрөл:Drama/History | 2 цаг</p>
-              </div>
-        </div>
-        <div className=" bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-500">
-            <img className="h-auto max-w-full rounded-lg" src="/src/assets/ball.jpg" alt="" />
-            <div className="p-3">
-              <div className="flex items-center space-x-4 gap-48">
-                 <p className="font-normal text-gray-700 dark:text-gray-400">sep 26, 2023</p>
-                   <a href="#" className="font-normal text-blue-700 dark:text-blue-400 hover:underline" onClick={() => navigate('/movie')}>
-                  дэлгэрэнгүй
-                 </a>
-              </div>
-                <a href="#">
-                            <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Bob Marley</h5>
-                </a>
-                <p className="font-normal text-gray-700 dark:text-gray-400"> Төрөл:Drama/History | 2 цаг</p>
-              </div>
-        </div>
-        <div className=" bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-500">
-            <img className="h-auto max-w-full rounded-lg" src="/src/assets/chicago.jpg" alt="" />
-            <div className="p-3">
-              <div className="flex items-center space-x-4 gap-48">
-                 <p className="font-normal text-gray-700 dark:text-gray-400">sep 26, 2023</p>
-                   <a href="#" className="font-normal text-blue-700 dark:text-blue-400 hover:underline" onClick={() => navigate('/movie')}>
-                  дэлгэрэнгүй
-                 </a>
-              </div>
-                <a href="#">
-                            <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Bob Marley</h5>
-                </a>
-                <p className="font-normal text-gray-700 dark:text-gray-400"> Төрөл:Drama/History | 2 цаг</p>
-              </div>
-        </div>
-        <div className=" bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-500" onClick={() => navigate('/movie')}>
-            <img className="h-auto max-w-full rounded-lg" src="/src/assets/ball.jpg" alt="" />
-            <div className="p-3">
-              <div className="flex items-center space-x-4 gap-48">
-                 <p className="font-normal text-gray-700 dark:text-gray-400">sep 26, 2023</p>
-                   <a href="#" className="font-normal text-blue-700 dark:text-blue-400 hover:underline" onClick={() => navigate('/movie')}>
-                  дэлгэрэнгүй
-                 </a>
-              </div>
-                <a href="#">
-                            <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Bob Marley</h5>
-                </a>
-                <p className="font-normal text-gray-700 dark:text-gray-400"> Төрөл:Drama/History | 2 цаг</p>
-              </div>
-        </div>
-        <div className=" bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-500" onClick={() => navigate('/movie')}>
-            <img className="h-auto max-w-full rounded-lg" src="/src/assets/chicago.jpg" alt="" />
-            <div className="p-3">
-              <div className="flex items-center space-x-4 gap-48">
-                 <p className="font-normal text-gray-700 dark:text-gray-400">sep 26, 2023</p>
-                   <a href="#" className="font-normal text-blue-700 dark:text-blue-400 hover:underline">
-                  дэлгэрэнгүй
-                 </a>
-              </div>
-                <a href="#">
-                            <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Bob Marley</h5>
-                </a>
-                <p className="font-normal text-gray-700 dark:text-gray-400"> Төрөл:Drama/History | 2 цаг</p>
-              </div>
-        </div>
-        <div className=" bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-500" >
-            <img className="h-auto max-w-full rounded-lg" src="/src/assets/seattle.jpg" alt="" />
-            <div className="p-3">
-              <div className="flex items-center space-x-4 gap-48">
-                 <p className="font-normal text-gray-700 dark:text-gray-400">sep 26, 2023</p>
-                   <a href="#" className="font-normal text-blue-700 dark:text-blue-400 hover:underline" onClick={() => navigate('/movie')}>
-                  дэлгэрэнгүй
-                 </a>
-              </div>
-                <a href="#">
-                            <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Bob Marley</h5>
-                </a>
-                <p className="font-normal text-gray-700 dark:text-gray-400"> Төрөл:Drama/History | 2 цаг</p>
-              </div>
-          </div>
+    <div className="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-500 max-w-sm md:max-w-md lg:max-w-lg mx-auto">
+  <img
+    className="h-auto max-w-full rounded-t-lg"
+    src="/src/assets/ball.jpg"
+    alt=""
+  />
+  <div className="p-4">
+    <div className="flex flex-col md:flex-row md:items-center md:justify-between">
+      <p className="font-normal text-gray-700 dark:text-gray-400 mb-2 md:mb-0">
+        Sep 26, 2023
+      </p>
+      <a
+        href="#"
+        className="font-normal text-blue-700 dark:text-blue-400 hover:underline"
+        onClick={() => navigate('/movie')}
+      >
+        дэлгэрэнгүй
+      </a>
+    </div>
+    <a href="#">
+      <h5 className="text-xl md:text-2xl font-bold tracking-tight text-gray-900 dark:text-white mt-4">
+        Bob Marley
+      </h5>
+    </a>
+    <p className="font-normal text-gray-700 dark:text-gray-400 mt-2">
+      Төрөл: Drama/History | 2 цаг
+    </p>
+  </div>
+</div>
+        <div className="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-500 max-w-sm md:max-w-md lg:max-w-lg mx-auto">
+  <img
+    className="h-auto max-w-full rounded-t-lg"
+    src="/src/assets/ball.jpg"
+    alt=""
+  />
+  <div className="p-4">
+    <div className="flex flex-col md:flex-row md:items-center md:justify-between">
+      <p className="font-normal text-gray-700 dark:text-gray-400 mb-2 md:mb-0">
+        Sep 26, 2023
+      </p>
+      <a
+        href="#"
+        className="font-normal text-blue-700 dark:text-blue-400 hover:underline"
+        onClick={() => navigate('/movie')}
+      >
+        дэлгэрэнгүй
+      </a>
+    </div>
+    <a href="#">
+      <h5 className="text-xl md:text-2xl font-bold tracking-tight text-gray-900 dark:text-white mt-4">
+        Bob Marley
+      </h5>
+    </a>
+    <p className="font-normal text-gray-700 dark:text-gray-400 mt-2">
+      Төрөл: Drama/History | 2 цаг
+    </p>
+  </div>
+</div>
+
+<div className="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-500 max-w-sm md:max-w-md lg:max-w-lg mx-auto">
+  <img
+    className="h-auto max-w-full rounded-t-lg"
+    src="/src/assets/ball.jpg"
+    alt=""
+  />
+  <div className="p-4">
+    <div className="flex flex-col md:flex-row md:items-center md:justify-between">
+      <p className="font-normal text-gray-700 dark:text-gray-400 mb-2 md:mb-0">
+        Sep 26, 2023
+      </p>
+      <a
+        href="#"
+        className="font-normal text-blue-700 dark:text-blue-400 hover:underline"
+        onClick={() => navigate('/movie')}
+      >
+        дэлгэрэнгүй
+      </a>
+    </div>
+    <a href="#">
+      <h5 className="text-xl md:text-2xl font-bold tracking-tight text-gray-900 dark:text-white mt-4">
+        Bob Marley
+      </h5>
+    </a>
+    <p className="font-normal text-gray-700 dark:text-gray-400 mt-2">
+      Төрөл: Drama/History | 2 цаг
+    </p>
+  </div>
+</div>
+
+<div className="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-500 max-w-sm md:max-w-md lg:max-w-lg mx-auto">
+  <img
+    className="h-auto max-w-full rounded-t-lg"
+    src="/src/assets/ball.jpg"
+    alt=""
+  />
+  <div className="p-4">
+    <div className="flex flex-col md:flex-row md:items-center md:justify-between">
+      <p className="font-normal text-gray-700 dark:text-gray-400 mb-2 md:mb-0">
+        Sep 26, 2023
+      </p>
+      <a
+        href="#"
+        className="font-normal text-blue-700 dark:text-blue-400 hover:underline"
+        onClick={() => navigate('/movie')}
+      >
+        дэлгэрэнгүй
+      </a>
+    </div>
+    <a href="#">
+      <h5 className="text-xl md:text-2xl font-bold tracking-tight text-gray-900 dark:text-white mt-4">
+        Bob Marley
+      </h5>
+    </a>
+    <p className="font-normal text-gray-700 dark:text-gray-400 mt-2">
+      Төрөл: Drama/History | 2 цаг
+    </p>
+  </div>
+</div>
+
+
+<div className="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-500 max-w-sm md:max-w-md lg:max-w-lg mx-auto">
+  <img
+    className="h-auto max-w-full rounded-t-lg"
+    src="/src/assets/ball.jpg"
+    alt=""
+  />
+  <div className="p-4">
+    <div className="flex flex-col md:flex-row md:items-center md:justify-between">
+      <p className="font-normal text-gray-700 dark:text-gray-400 mb-2 md:mb-0">
+        Sep 26, 2023
+      </p>
+      <a
+        href="#"
+        className="font-normal text-blue-700 dark:text-blue-400 hover:underline"
+        onClick={() => navigate('/movie')}
+      >
+        дэлгэрэнгүй
+      </a>
+    </div>
+    <a href="#">
+      <h5 className="text-xl md:text-2xl font-bold tracking-tight text-gray-900 dark:text-white mt-4">
+        Bob Marley
+      </h5>
+    </a>
+    <p className="font-normal text-gray-700 dark:text-gray-400 mt-2">
+      Төрөл: Drama/History | 2 цаг
+    </p>
+  </div>
+</div>
+
+<div className="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-500 max-w-sm md:max-w-md lg:max-w-lg mx-auto">
+  <img
+    className="h-auto max-w-full rounded-t-lg"
+    src="/src/assets/ball.jpg"
+    alt=""
+  />
+  <div className="p-4">
+    <div className="flex flex-col md:flex-row md:items-center md:justify-between">
+      <p className="font-normal text-gray-700 dark:text-gray-400 mb-2 md:mb-0">
+        Sep 26, 2023
+      </p>
+      <a
+        href="#"
+        className="font-normal text-blue-700 dark:text-blue-400 hover:underline"
+        onClick={() => navigate('/movie')}
+      >
+        дэлгэрэнгүй
+      </a>
+    </div>
+    <a href="#">
+      <h5 className="text-xl md:text-2xl font-bold tracking-tight text-gray-900 dark:text-white mt-4">
+        Bob Marley
+      </h5>
+    </a>
+    <p className="font-normal text-gray-700 dark:text-gray-400 mt-2">
+      Төрөл: Drama/History | 2 цаг
+    </p>
+  </div>
+</div>
+
    
     </div>
     {/*Бусад button*/}
      <div className="grid place-items-center h-full py-6">
-    <a className="px-10 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" 
+     <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" 
                             onClick={()=> navigate('/bookTicket')}>Бусад
-                    </a>
+                    </button>
     
   </div>
 
@@ -240,7 +330,7 @@ export default function Home() {
     <div className="flex justify-center items-center h-full">
       <h2 className="text-2xl font-bold my-8">ТУН УДАХГҮЙ</h2>
     </div>
-    <div className="grid md:grid-cols-4 gap-2">
+    <div className="grid md:grid-cols-4 gap-2 pb-6">
         <div>
             <img className="h-auto max-w-full rounded-lg" src="/src/assets/seattle.jpg" alt="" />
         </div>
