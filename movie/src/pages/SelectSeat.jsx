@@ -131,6 +131,20 @@ export default function SelectSeat() {
 
       {/* Seat Selection */}
       <div className="py-6">
+      <div className="flex justify-center items-center">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 100 50"
+        className="w-32 h-16"
+      >
+        <path
+          d="M 0 50 A 50 50 0 0 1 100 50"
+          fill="none"
+          stroke="gray"
+          strokeWidth="2"
+        />
+      </svg>
+    </div>
         <div className="container mx-auto">
           <h2 className="text-lg font-semibold mb-4">Та суудлаа сонгоно уу?</h2>
         

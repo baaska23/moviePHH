@@ -45,19 +45,19 @@ export default function Movie() {
                 <div className="container mx-auto px-4">
                     {/* Director Section */}
                     <div className="flex flex-col items-center mb-12">
-                        <h2 className="text-white text-2xl font-bold mb-4">НАЙРУУЛАГЧ БА ЗОХИОЛЧИД</h2>
+                        <h2 className="text-black dark:text-white text-2xl font-bold mb-4 ">НАЙРУУЛАГЧ БА ЗОХИОЛЧИД</h2>
                         <div className="flex gap-6">
                         <div className="bg-gray-500 p-6 rounded-lg shadow-lg text-center w-40">
-                            <span className="text-white text-lg font-medium block">Christopher Nolan</span>
+                            <span className="text-black dark:text-white text-lg font-medium block">Christopher Nolan</span>
                             <div className="h-1 bg-blue-600 w-12 mx-auto my-4 rounded-full"></div>
                         </div>
                         <div className="bg-gray-500 p-6 rounded-lg shadow-lg text-center w-40">
-                            <span className="text-white text-lg font-medium block">Kai Bird</span>
+                            <span className="text-black dark:text-white text-lg font-medium block">Kai Bird</span>
                             <div className="h-1 bg-blue-600 w-12 mx-auto my-4 rounded-full"></div>
                             
                         </div>
                         <div className="bg-gray-500 p-6 rounded-lg shadow-lg text-center w-40">
-                            <span className="text-white text-lg font-medium block">Martin Sherwin</span>
+                            <span className="text-black dark:text-white text-lg font-medium block">Martin Sherwin</span>
                             <div className="h-1 bg-blue-600 w-12 mx-auto my-4 rounded-full"></div>
         
                         </div>
@@ -67,7 +67,7 @@ export default function Movie() {
 
                     {/* Cast Section */}
                     <div className="mb-12">
-                        <h2 className="text-white text-2xl font-bold text-center mb-8">ЖҮЖИГЧИД</h2>
+                        <h2 className="text-black dark:text-white text-2xl font-bold text-center mb-8">ЖҮЖИГЧИД</h2>
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                             {[
                                 { name: "Cillian Murphy", img: "/src/assets/actors/avatar.jpg" },
@@ -84,7 +84,7 @@ export default function Movie() {
                                         src={actor.img}
                                         alt={actor.name}
                                     />
-                                    <span className="text-white font-medium">{actor.name}</span>
+                                    <span className="text-black dark:text-white font-medium">{actor.name}</span>
                                 </div>
                             ))}
                         </div>
@@ -92,7 +92,7 @@ export default function Movie() {
                     </div>
 
                     <div className="flex flex-wrap justify-center mb-8">
-                        <span className="text-white block text-lg font-semibold mb-4">ОНЦЛОХ ЗУРАГ БОЛОН ХЭСГҮҮД</span>
+                        <span className="text-black dark:text-white block text-lg font-semibold mb-4">ОНЦЛОХ ЗУРАГ БОЛОН ХЭСГҮҮД</span>
                         <div className="grid md:grid-cols-4 gap-4">
                             <div>
                                 <img className="h-52 max-w-full rounded-lg" src="/src/assets/movie/op1.jpg" alt="op1" />
