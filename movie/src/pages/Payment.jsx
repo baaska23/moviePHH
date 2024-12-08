@@ -59,10 +59,10 @@ export default function Payment() {
   };
 
   return (
-    <div className="bg-black min-h-screen text-white">
+    <div className="bg-white dark:bg-gray-900 min-h-screen text-white">
       <div className="container mx-auto py-6">
         <h1 className="text-2xl font-bold mb-4">Төлбөрийн мэдээлэл</h1>
-        <div className="bg-gray-900 p-4 rounded-lg mb-6">
+        <div className="bg-gray-600 dark:bg-gray-900 p-4 rounded-lg mb-6 shadow">
           <p className="mb-2">
             <strong>Том хүн:</strong> {adultTickets} тасалбар x {adultTicketPrice}₮
           </p>
@@ -75,7 +75,7 @@ export default function Payment() {
         </div>
       </div>
 
-      <form onSubmit={handleSubmit} className="bg-gray-900 p-6 rounded-lg max-w-xl mx-auto">
+      <form onSubmit={handleSubmit} className="dark:bg-gray-800 bg-gray-500 p-6 rounded-lg max-w-xl mx-auto">
         <div className="mb-4">
           <label className="block mb-2">
             Name:
@@ -84,7 +84,7 @@ export default function Payment() {
               name="name"
               value={formData.name}
               onChange={handleInputChange}
-              className="w-full p-2 rounded bg-gray-800 text-white"
+              className="w-full p-2 rounded dark:bg-gray-800 bg-gray-500 text-white"
             />
           </label>
         </div>
@@ -96,7 +96,7 @@ export default function Payment() {
               name="email"
               value={formData.email}
               onChange={handleInputChange}
-              className="w-full p-2 rounded bg-gray-800 text-white"
+              className="w-full p-2 rounded dark:bg-gray-800 bg-gray-500 text-white"
             />
           </label>
         </div>
@@ -108,7 +108,7 @@ export default function Payment() {
               name="phone"
               value={formData.phone}
               onChange={handleInputChange}
-              className="w-full p-2 rounded bg-gray-800 text-white"
+              className="w-full p-2 rounded dark:bg-gray-800 bg-gray-500 text-white"
             />
           </label>
         </div>
@@ -118,7 +118,7 @@ export default function Payment() {
             <select
               value={paymentMethod}
               onChange={(e) => handlePaymentMethodChange(e.target.value)}
-              className="w-full p-2 rounded bg-gray-800 text-white"
+              className="w-full p-2 rounded bg-gray- bg-gray-600 text-white"
             >
               <option value="">Select a payment method</option>
               <option value="Khan Bank">Khan Bank</option>

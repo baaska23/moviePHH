@@ -177,7 +177,7 @@ export default function SelectSeat() {
       </div>
 
       {/* Ticket Selection */}
-      <div className="py-6 border-t border-gray-800">
+      <div className="py-6 border-t border-gray-800 bg-white dark:bg-gray-900 ">
         <div className="container mx-auto">
           <h2 className="text-lg font-semibold mb-4">Тасалбар тоо сонгох</h2>
           <div className="flex-col justify-between items-center mb-4">
