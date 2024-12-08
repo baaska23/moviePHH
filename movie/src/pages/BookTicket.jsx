@@ -43,7 +43,7 @@ export default function BookTicket() {
             poster={movie.poster}
             description={movie.description}
             timings={movie.timings}
-            onTimingClick={handleTimingClick} // Pass the handler
+            onTimingClick={handleTimingClick}
           />
         ))}
       </div>

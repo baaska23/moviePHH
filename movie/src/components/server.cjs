@@ -63,6 +63,16 @@ app.get('/coming_soon_movies', async (req, res) => {
   }
 });
 
+app.get('/home_movie', async(req, res) => {
+  try{
+    const result = await pool.query('SELECT * FROM home_movie');
+    res.json(result.rows)
+  }catch(err){
+    console.error(err)
+    res.status(500).send('Server error')
+  }
+})
+
 app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`);
 });
