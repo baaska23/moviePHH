@@ -23,28 +23,28 @@ export default function SelectSeat() {
     { id: 7, isAvailable: true },
     { id: 8, isAvailable: false },
     { id: 9, isAvailable: true },
-    { id: 10, isAvailable: true },
+    { id: 10, isAvailable: false },
     { id: 11, isAvailable: true },
     { id: 12, isAvailable: false },
-    { id: 13, isAvailable: true },
+    { id: 13, isAvailable: false },
     { id: 14, isAvailable: true },
     { id: 15, isAvailable: false },
     { id: 16, isAvailable: true },
     { id: 17, isAvailable: true },
-    { id: 18, isAvailable: false },
+    { id: 18, isAvailable: true },
     { id: 19, isAvailable: true },
     { id: 20, isAvailable: true },
     { id: 21, isAvailable: true },
-    { id: 22, isAvailable: false },
+    { id: 22, isAvailable: true },
     { id: 23, isAvailable: true },
-    { id: 24, isAvailable: true },
-    { id: 25, isAvailable: false },
+    { id: 24, isAvailable: false },
+    { id: 25, isAvailable: true },
     { id: 26, isAvailable: true },
     { id: 27, isAvailable: true },
     { id: 28, isAvailable: false },
     { id: 29, isAvailable: true },
     { id: 30, isAvailable: true },
-    { id: 31, isAvailable: true },
+    { id: 31, isAvailable: false },
     { id: 32, isAvailable: false },
     { id: 33, isAvailable: true },
     { id: 34, isAvailable: true },
@@ -55,14 +55,14 @@ export default function SelectSeat() {
     { id: 39, isAvailable: true },
     { id: 40, isAvailable: true },
     { id: 41, isAvailable: true },
-    { id: 42, isAvailable: false },
+    { id: 42, isAvailable: true },
     { id: 43, isAvailable: true },
     { id: 44, isAvailable: true },
-    { id: 45, isAvailable: false },
-    { id: 46, isAvailable: true },
-    { id: 47, isAvailable: true },
-    { id: 48, isAvailable: false },
-    { id: 49, isAvailable: true },
+    { id: 45, isAvailable: true },
+    { id: 46, isAvailable: false },
+    { id: 47, isAvailable: false },
+    { id: 48, isAvailable: true },
+    { id: 49, isAvailable: false },
     { id: 50, isAvailable: true },
   ];
 
@@ -101,15 +101,15 @@ export default function SelectSeat() {
       alert('Please select enough seats for all tickets.');
     } else {
       navigate('/payment', { state: { selectedSeats, adultTickets, childTickets } });
+    
+    
     }
   };
 
   const posterSrc = movieTitle === 'Oppenheimer' 
     ? '/src/assets/movie/oppenheimer.jpg' 
     : movieTitle === 'Batman'
-    ? '/src/assets/movie/batman.jpg' 
-    : movieTitle === 'Napoleon'
-    ? '/src/assets/movie/napoleon.jpeg'
+    ? '/src/assets/movie/batman.jpg'
     : moviePoster
 
   return (
@@ -133,6 +133,7 @@ export default function SelectSeat() {
       <div className="py-6">
         <div className="container mx-auto">
           <h2 className="text-lg font-semibold mb-4">Та суудлаа сонгоно уу?</h2>
+        
           <div className="grid grid-cols-10 gap-2 justify-center">
             {seats.map((seat) => (
               <button
@@ -151,6 +152,7 @@ export default function SelectSeat() {
               </button>
             ))}
           </div>
+          
           <p className="mt-4 text-sm">
             Сонгосон суудал:{' '}
             <span className="font-semibold">
@@ -164,7 +166,7 @@ export default function SelectSeat() {
       <div className="py-6 border-t border-gray-800">
         <div className="container mx-auto">
           <h2 className="text-lg font-semibold mb-4">Тасалбар тоо сонгох</h2>
-          <div className="flex justify-between items-center mb-4">
+          <div className="flex-col justify-between items-center mb-4">
             <div className="flex items-center">
               <p className="text-sm">Том хүн (10,000₮)</p>
               <div className="ml-4 flex items-center space-x-2">
@@ -209,7 +211,7 @@ export default function SelectSeat() {
       </div>
 
       {/* Action Buttons */}
-      <div className="container mx-auto text-center mt-8">
+      <div className="container mx-auto text-center mt-8 pb-8">
         <button
           className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-lg mx-2"
           onClick={handleButtonClick}

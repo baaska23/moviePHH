@@ -35,7 +35,7 @@ export default function BookTicket() {
   return (
     <div>
       <h1 className="text-2xl font-bold text-center my-6">Book a Ticket</h1>
-      <div className="px-32">
+      <div className="px-32 border-r-black">
         {movies.map((movie, index) => (
           <MovieCard
             key={index}

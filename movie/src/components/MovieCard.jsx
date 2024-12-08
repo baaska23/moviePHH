@@ -2,8 +2,7 @@ import React from "react";
 
 const MovieCard = ({ title, poster, description, timings, onTimingClick }) => {
   return (
-    <div className="bg-gray-800 text-white rounded-lg shadow-md p-4 mb-6 flex items-start space-x-4">
-      {/* Movie Poster */}
+<div className="bg-white dark:bg-gray-800 text-black dark:text-white rounded-lg shadow-md p-4 mb-6 flex items-start space-x-4">      {/* Movie Poster */}
       <img
         src={poster}
         alt={title}

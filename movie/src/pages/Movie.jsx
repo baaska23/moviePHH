@@ -40,23 +40,23 @@ export default function Movie() {
                 </div>
             </div>
 
-            <div className="bg-slate-800 py-12">
+            <div className="bg-white dark:bg-gray-900 py-12">
                 <div className="container mx-auto px-4">
                 <div className="container mx-auto px-4">
                     {/* Director Section */}
                     <div className="flex flex-col items-center mb-12">
                         <h2 className="text-white text-2xl font-bold mb-4">НАЙРУУЛАГЧ БА ЗОХИОЛЧИД</h2>
                         <div className="flex gap-6">
-                        <div className="bg-gray-900 p-6 rounded-lg shadow-lg text-center w-40">
+                        <div className="bg-gray-500 p-6 rounded-lg shadow-lg text-center w-40">
                             <span className="text-white text-lg font-medium block">Christopher Nolan</span>
                             <div className="h-1 bg-blue-600 w-12 mx-auto my-4 rounded-full"></div>
                         </div>
-                        <div className="bg-gray-900 p-6 rounded-lg shadow-lg text-center w-40">
+                        <div className="bg-gray-500 p-6 rounded-lg shadow-lg text-center w-40">
                             <span className="text-white text-lg font-medium block">Kai Bird</span>
                             <div className="h-1 bg-blue-600 w-12 mx-auto my-4 rounded-full"></div>
                             
                         </div>
-                        <div className="bg-gray-900 p-6 rounded-lg shadow-lg text-center w-40">
+                        <div className="bg-gray-500 p-6 rounded-lg shadow-lg text-center w-40">
                             <span className="text-white text-lg font-medium block">Martin Sherwin</span>
                             <div className="h-1 bg-blue-600 w-12 mx-auto my-4 rounded-full"></div>
         
@@ -77,7 +77,7 @@ export default function Movie() {
                             ].map((actor, index) => (
                                 <div
                                     key={index}
-                                    className="flex flex-col items-center bg-gray-900 p-4 rounded-lg shadow-lg hover:shadow-xl transition duration-300"
+                                    className="flex flex-col items-center bg-gray-500 p-4 rounded-lg shadow-lg hover:shadow-xl transition duration-300"
                                 >
                                     <img
                                         className="w-24 h-24 rounded-full mb-4 border-2 border-blue-600"
