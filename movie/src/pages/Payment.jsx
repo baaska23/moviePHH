@@ -75,7 +75,7 @@ export default function Payment() {
         </div>
       </div>
 
-      <form onSubmit={handleSubmit} className="dark:bg-gray-800 bg-gray-500 p-6 rounded-lg max-w-xl mx-auto">
+      <form onSubmit={handleSubmit} className="dark:bg-gray-900 bg-gray-600 p-6 rounded-lg max-w-xl mx-auto">
         <div className="mb-4">
           <label className="block mb-2">
             Name:
@@ -84,7 +84,7 @@ export default function Payment() {
               name="name"
               value={formData.name}
               onChange={handleInputChange}
-              className="w-full p-2 rounded dark:bg-gray-800 bg-gray-500 text-white"
+              className="w-full p-2 rounded dark:bg-gray-800 bg-gray-400 text-white"
             />
           </label>
         </div>
@@ -96,7 +96,7 @@ export default function Payment() {
               name="email"
               value={formData.email}
               onChange={handleInputChange}
-              className="w-full p-2 rounded dark:bg-gray-800 bg-gray-500 text-white"
+              className="w-full p-2 rounded dark:bg-gray-800 bg-gray-400 text-white"
             />
           </label>
         </div>
@@ -108,7 +108,7 @@ export default function Payment() {
               name="phone"
               value={formData.phone}
               onChange={handleInputChange}
-              className="w-full p-2 rounded dark:bg-gray-800 bg-gray-500 text-white"
+              className="w-full p-2 rounded dark:bg-gray-800 bg-gray-400 text-white"
             />
           </label>
         </div>

@@ -113,9 +113,9 @@ export default function SelectSeat() {
     : moviePoster
 
   return (
-    <div className="bg-black min-h-screen text-white">
+    <div className="bg-black min-h-screen dark:text-white text-black">
       {/* Movie Information */}
-      <div className="bg-gray-900 py-6">
+      <div className="dark:bg-gray-900 bg-white py-6 rounded-lg shadow-sm">
         <div className="container mx-auto flex items-center space-x-6">
           <img
             src={posterSrc} 
@@ -124,14 +124,14 @@ export default function SelectSeat() {
           />
           <div>
             <h1 className="text-2xl font-bold">{movieTitle || 'Movie Title'}</h1>
-            <p className="text-gray-400">{timing || 'Timing Unavailable'} | Танхим-1</p>
+            <p className="dark:text-gray-400 text-gray-600">{timing || 'Timing Unavailable'} | Танхим-1</p>
           </div>
         </div>
       </div>
 
       {/* Seat Selection */}
       <div className="py-6">
-      <div className="flex justify-center items-center">
+      <div className="flex justify-center items-center w-screen">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 100 50"
