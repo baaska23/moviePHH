@@ -3,19 +3,24 @@ import { useNavigate } from "react-router-dom";
 import Login from "./Login";
 import Signup from "./Signup";
 
+//дэлгэцний дээд menu хэсэг
 export function Navbar() {
+  // хуудас хоорондын шилжилт
   const navigate = useNavigate();
+
   const [isLoginOpen, setIsLoginOpen] = useState(false);
   const [isSignupOpen, setIsSignupOpen] = useState(false);
   const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+  // хэрэглэгч системээс гарах үйлдлийг зохицуулах функц
   const handleLogout = () => {
     setIsUserLoggedIn(false);
     setIsDropdownOpen(false);
   };
 
+  // navbar menu хэсэг
   const MenuLinks = () => (
     <ul className="flex flex-col p-4 md:p-full mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
   <li>
@@ -85,6 +90,7 @@ export function Navbar() {
             <span className="sr-only">Open menu</span>
           </button>
 
+          {/*хэрэглэгч нэвтрэх үед дэлгэрэнгүй мэдээллийг харуулах хэсэг*/}
           {isUserLoggedIn ? (
             <div className="relative">
               <button
@@ -124,13 +130,13 @@ export function Navbar() {
 
         {/* Mobile Menu */}
         <div
-  className={`${
-    isMobileMenuOpen ? "absolute left-0" : "hidden"
-  } w-full md:hidden z-10 pt-52`}
-  onClick={() => setIsMobileMenuOpen(false)}
->
-  <MenuLinks />
-</div>
+          className={`${
+            isMobileMenuOpen ? "absolute left-0" : "hidden"
+          } w-full md:hidden z-10 pt-52`}
+          onClick={() => setIsMobileMenuOpen(false)}
+        >
+          <MenuLinks />
+        </div>
 
 
         {/* Desktop Menu */}

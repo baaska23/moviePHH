@@ -19,10 +19,9 @@ const pool = new Pool({
 app.use(bodyParser.json());
 app.use(cors());
 
-// Payment endpoint
+// тасалбар төлөлтийн дэлгэрэнгүй мэдээллийг database-д хадгалах
 app.post('/api/payment', async (req, res) => {
-  console.log("Request body:", req.body); // Log incoming request data
-
+  console.log("Request body:", req.body);
   const { name, email, phone, paymentMethod, totalCost } = req.body;
 
   if (!name || !email || !phone || !paymentMethod || !totalCost) {
@@ -38,11 +37,12 @@ app.post('/api/payment', async (req, res) => {
     console.log("Inserted row:", result.rows[0]); // Log inserted data
     res.status(201).json(result.rows[0]);
   } catch (err) {
-    console.error("Database error:", err.stack); // Log database error details
+    console.error("Database error:", err.stack);
     res.status(500).json({ error: 'Internal Server Error', details: err.message });
   }
 });
 
+// киноны датаг database-с дуудах
 app.get('/movies', async (req, res) => {
   try{
     const result = await pool.query('SELECT * FROM movies');
@@ -53,6 +53,7 @@ app.get('/movies', async (req, res) => {
   }
 });
 
+// тун удахгй гарах киноны датаг database-с дуудах
 app.get('/coming_soon_movies', async (req, res) => {
   try{
     const result = await pool.query('SELECT * FROM coming_soon_movies');
@@ -63,6 +64,7 @@ app.get('/coming_soon_movies', async (req, res) => {
   }
 });
 
+// нүүр хуудсанд байрлах киноны датаг database-с дуудах
 app.get('/home_movie', async(req, res) => {
   try{
     const result = await pool.query('SELECT * FROM home_movie');

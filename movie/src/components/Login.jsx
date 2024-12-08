@@ -1,13 +1,17 @@
 import React, { useState } from "react";
 
+// хэрэглэгчийн системд нэвтрэх хэсэг
 export default function Login({ onClose, onLoginSuccess, onSignupOpen }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
   const [showPassword] = useState(false);
 
+  // нэвтрэх мэдээлэл буруу зөвийг шалгах функц
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    // хэрэглэгчийн бүртгэлийг шалгах static дата
     const mockResponse = {
       email: "test@example.com",
       password: "password123",
@@ -27,7 +31,7 @@ export default function Login({ onClose, onLoginSuccess, onSignupOpen }) {
         {/* Left Side */}
         <div className="w-full md:w-1/2 bg-gray-100 p-4 md:p-10 flex flex-col justify-center items-center ">
           <img
-            src="src/assets/login-pic.png" // Ensure the image is in the public/assets directory
+            src="src/assets/login-pic.png"
             alt="Camera Icon"
             className="h-14 md:h-24 mb-4 md:mb-6"
           />

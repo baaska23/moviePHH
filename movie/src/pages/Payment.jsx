@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
 import axios from "axios";
 
+// төлбөр төлөх хэсэг
 export default function Payment() {
   const adultTicketPrice = 10000;
   const childTicketPrice = 8000;
@@ -13,6 +14,8 @@ export default function Payment() {
 
   const totalCost = adultTickets * adultTicketPrice + childTickets * childTicketPrice;
 
+
+  // төлбөр баталгаажуулах форм
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -58,6 +61,7 @@ export default function Payment() {
     }
   };
 
+  // төлбөрийн мэдээлэл хэсэг
   return (
     <div className="bg-white dark:bg-gray-900 min-h-screen text-white">
       <div className="container mx-auto py-6">

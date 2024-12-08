@@ -1,14 +1,16 @@
-                                      import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import HomeMovieCard from "../components/HomeMovieCard";
 
+// нүүр хуудас
 export default function Home() {
   const navigate = useNavigate();
   const [movies, setMovies] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [cardsPerView, setCardsPerView] = useState(4);
 
+  // database-с дуудсан киноны мэдээллийг дэлгэцэд харуулах
   useEffect(() => {
     const fetchMovies = async () => {
       try {
@@ -22,6 +24,7 @@ export default function Home() {
     fetchMovies();
   }, []);
 
+  // carousel хэсгийн дата
   const slides = [
     { src: "/src/assets/car1.jpg", alt: "Sky" },
     { src: "/src/assets/car2.jpg", alt: "Ball" },
@@ -33,6 +36,7 @@ export default function Home() {
   };
 
 
+  // тун удахгүй гарах кинонуудын дата
   const cards = [
     {
       id: 1,
@@ -84,8 +88,8 @@ export default function Home() {
     },
   ];
  
+  // нэг дор хэдэн carousel үзүүлэхийг тооцох функц
   useEffect(() => {
-    // Adjust the number of cards displayed per view based on the screen width
     const updateCardsPerView = () => {
       setCardsPerView(window.innerWidth < 640 ? 1 : 4);
     };

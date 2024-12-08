@@ -2,9 +2,11 @@ import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 
-
+// хэрэглэгчийн суудал сонгох хэсэг
 export default function SelectSeat() {
   const navigate = useNavigate();
+
+  //component хооронд дата дамжуулах функц
   const location = useLocation();
   console.log(location.state);
   const { movieTitle, moviePoster, timing } = location.state || {};
@@ -13,6 +15,7 @@ export default function SelectSeat() {
   const [adultTickets, setAdultTickets] = useState(0);
   const [childTickets, setChildTickets] = useState(0);
 
+  // боломжит суудлыг статикаар бүрдүүлэв
   const seats = [
     { id: 1, isAvailable: true },
     { id: 2, isAvailable: false },

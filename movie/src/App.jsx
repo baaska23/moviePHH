@@ -12,6 +12,7 @@ import Payment from './pages/Payment.jsx'
 
 function App() {
 
+  // component хоорондын route зааж өгөх хэсэг
   return (
     <BrowserRouter>
       <Navbar/>

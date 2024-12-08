@@ -1,6 +1,7 @@
-// components/ComingSoonCard.jsx
 import React from 'react';
 
+
+//тун удахгүй гарах кинонуудын card instance
 function ComingSoonCard({ title, poster, airDate }) {
   return (
     <div className="max-w-xs bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
