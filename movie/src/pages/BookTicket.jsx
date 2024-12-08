@@ -7,6 +7,7 @@ export default function BookTicket() {
   const navigate = useNavigate();
   const [movies, setMovies] = useState([]);
 
+  // database-с дуудсан киноны мэдээллийг дэлгэцэд харуулах
   useEffect(() => {
     const fetchMovies = async () => {
       try {
@@ -26,15 +27,16 @@ export default function BookTicket() {
     navigate('/selectSeat', {
       state: {
         movieTitle,
-        moviePoster, // Ensure moviePoster is passed
+        moviePoster,
         timing,
       },
     });
   };
 
+  // тасалбар захиалахад киноны мэдээллүүдийг харуулах хэсэг
   return (
     <div>
-      <h1 className="text-2xl font-bold text-center my-6">Book a Ticket</h1>
+      <h1 className="text-2xl font-bold text-center my-6">Тасалбар захиалах</h1>
       <div className="px-32 border-r-black">
         {movies.map((movie, index) => (
           <MovieCard

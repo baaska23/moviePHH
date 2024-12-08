@@ -1,17 +1,17 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
+
 export default function Footer() {
   const navigate = useNavigate();
 
+  //footer хэсэг
   return (
     <footer className="bg-white dark:bg-gray-900">
-      {/* Divider */}
       <hr className=" border-gray-300 dark:border-gray-200" />
 
-      {/* Main container */}
       <div className="mx-auto w-full max-w-screen-xl px-4">
-        {/* Social icons section */}
+        {/* Social icons */}
         <div className="flex flex-wrap justify-center pt-10 space-x-5 rtl:space-x-reverse">
             <a href="#" className="text-gray-400 hover:text-gray-900 dark:hover:text-white">
               <svg className="w-6 h-6 sm:w-4 sm:h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 8 19">

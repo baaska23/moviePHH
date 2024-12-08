@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 
+// хэрэглэгчийн бүртгэлийг зохицуулах хэсэг
 export default function signup({ onClose, onLoginOpen }) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -10,13 +11,12 @@ export default function signup({ onClose, onLoginOpen }) {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Mock validation (you'd replace this with an API call)
+    // нууц үгийг зөв зохиосон эсэхийг шалгах
     if (password !== confirmPassword) {
       setMessage("Нууц үг таарахгүй байна.");
       return;
     }
 
-    // Mock successful registration
     setMessage("Амжилттай бүртгэгдлээ!");
     setName("");
     setEmail("");

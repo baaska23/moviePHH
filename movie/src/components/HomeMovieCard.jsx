@@ -2,6 +2,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
+//нүүр хуудас дээрх кинонуудын card instance 
 export default function HomeMovieCard({id, title, poster, airDate, genre }) {
     const navigate = useNavigate()
   return (

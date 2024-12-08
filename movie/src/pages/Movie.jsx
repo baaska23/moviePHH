@@ -4,8 +4,10 @@ import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 export default function Movie() {
+    // хуудас хоорондын шилжилт
     const navigate = useNavigate();
     
+    //postgre db-с дата дуудаж байна
     useEffect(() => {
         const fetchMovie = async () => {
           try {
